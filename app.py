@@ -8,14 +8,9 @@ a = api()
 def home():
    return render_template("index.html")
 
-@app.route('/stats', methods = ['GET', 'POST'])
+@app.route('/stats')
 def stats_page():
-   print(request.args.get('user'))
    return render_template("stats.html")
-
-@app.route('/profile')
-def profile_page():
-   return render_template("profile.html")
 
 @app.route('/stats/', methods = ['GET', 'POST'])
 def user_stats_page():
@@ -24,10 +19,7 @@ def user_stats_page():
    username = accinfo['Response'][0]['bungieGlobalDisplayName'] + '#' + str(accinfo['Response'][0]['bungieGlobalDisplayNameCode'])
    membership_id = accinfo['Response'][0]['membershipId']
    membership_type = accinfo['Response'][0]['membershipType']
-
-   statinfo = a.GetHistoricalStatsForAccount(membershipType=membership_type, destinyMembershipId=membership_id)
-   
-   q = stats(statinfo)
+   q = stats(a.GetHistoricalStatsForAccount(membershipType=membership_type, destinyMembershipId=membership_id))
 
    return render_template('temp.html', username = username,
                                        kills = q.getKills(),

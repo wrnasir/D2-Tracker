@@ -1,14 +1,3 @@
-#----------------------------------------------------------------------------------------------------------------------------------
-# TODO:
-# USE OAUTHACESS METHOD TO CREATE AN OBJECT WITH PARAMS membershipID AND membershiptype WITH STATIC VARAIBLES AS THE URL
-# create an exception for request method for != 200 error codes
-#----------------------------------------------------------------------------------------------------------------------------------
-# DATA TO GET: FOR EACH ACTIVITY (gambit, crucible, vanguard) -> BASIC STATS (kda, headshot, win percent), TIME PLAYED, 
-# IN FINAL WEBSITE, COMPARE TIMEPLAYED IN A CIRCULAR ASS PIECHART OR SUMN
-#----------------------------------------------------------------------------------------------------------------------------------
-# i dont even know what day it is anymore
-#----------------------------------------
-
 from dotenv import load_dotenv
 import os
 import requests
@@ -18,7 +7,6 @@ load_dotenv()
 additional_headers = {'X-API-KEY': os.getenv('API_KEY')}
 DEFAULT_URL = 'https://www.bungie.net'
 s = requests.Session()
-
 
 class api:
     def request(self, upurl):
