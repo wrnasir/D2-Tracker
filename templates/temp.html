@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucible Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">crucibletracker</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> Home </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/stats" class="button"> Stats </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="stats">
+        <div class="stats__container">
+            <div class="stats__content">
+                <div class="bubble">
+                    <div class="stats__content">
+                        <h1> {{ username }}</h1>
+                        <table class="content__table">
+                            <thead>
+                                <tr>
+                                    <th>Kills</th>
+                                    <th>Deaths</th>
+                                    <th>Assists</th>
+                                    <th>Revives</th>
+                                </tr>                        
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> {{ kills }}</td>
+                                    <td> {{ deaths }}</td>
+                                    <td> {{ assists }}</td>
+                                    <td> {{ revives }}</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>KD</th>
+                                    <th>KDA</th>
+                                    <th>Efficiency</th>
+                                    <th>Opponents Defeated</th>
+                                </tr>                        
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ KD }}</td>
+                                    <td> {{ KDA }}</td>
+                                    <td> {{ efficiency }}</td>
+                                    <td>{{ opps_defeated }}</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>Precision Kills</th>
+                                    <th>Highest Kills</th>
+                                    <th>Highest Killstrak</th>
+                                    <th>Time Played</th>
+                                </tr>                        
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> {{ precisionkills }}</td>
+                                    <td> {{ highestkills }}</td>
+                                    <td> {{ highestkillstreak }}</td>
+                                    <td> {{ timeplayed }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/animation.js"></script>
+</body>
+</html>
